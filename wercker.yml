@@ -20,7 +20,14 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
-        - bundle-install
         - script:
-            name: rspec
-            code: bundle exec rspec
+            name: use system libraries for nokogiri
+            code: bundle config build.nokogiri --use-system-libraries
+        - bundle-install
+        - rails-database-yml
+        # - script:
+        #     name: set up test database
+        #     code: bundle exec rake db:schema:load RAILS_ENV=test
+        # - script:
+        #     name: run rspec
+        #     code: bundle exec rspec
