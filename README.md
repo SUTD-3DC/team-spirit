@@ -7,10 +7,10 @@
 1. Install Postgres, get it running and create a local database!
 
 ```shell
-  brew update
-  brew install postgres
-  postgres -D /usr/local/var/postgres
-  createdb team_spirit_dev
+brew update
+brew install postgres
+postgres -D /usr/local/var/postgres
+createdb team_spirit_dev
 ```
 
 2. Clone this repository
@@ -24,11 +24,11 @@
 4. Get the website running!
 
 ```shell
-    cd team-spirit
-    rvm install 2.3.0
-    bundle install
-    cp config/database.yml.sample database.yml
-    puma
+cd team-spirit
+rvm install 2.3.0
+bundle install
+cp config/database.yml.sample database.yml
+puma
 ```
 
 The website will be accessible at localhost:9292. Hooray!
