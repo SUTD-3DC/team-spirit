@@ -1,4 +1,5 @@
-# Website!
+# TEAM-SPIRIT
+## This is the website repo for 3DC!
 
 ## Steps to get this running:
 
@@ -28,3 +29,5 @@
     cp config/database.yml.sample database.yml
     puma
 ```
+
+The website will be accessible at localhost:9292. Hooray!
