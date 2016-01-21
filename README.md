@@ -13,11 +13,11 @@
 
 2. Clone this repository
 
-    git clone git@github.com:SUTD-3DC/team-spirit.git
+``git clone git@github.com:SUTD-3DC/team-spirit.git``
 
 3. Install RVM (Ruby Version Manager)
 
-    \curl -L https://get.rvm.io | bash -s stable
+``\curl -L https://get.rvm.io | bash -s stable``
 
 4. Get the website running!
 
