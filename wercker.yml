@@ -2,8 +2,7 @@
 # the Docker Hub.
 # https://registry.hub.docker.com/_/ruby/
 # If you want to use a specific version you would use a tag:
-ruby: 2.3.0
-box: rails
+box: ruby:2.3
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 services:
@@ -25,7 +24,7 @@ build:
             name: use system libraries for nokogiri
             code: bundle config build.nokogiri --use-system-libraries
         - bundle-install
-        - rails-database-yml
+        # - rails-database-yml
         # - script:
         #     name: set up test database
         #     code: bundle exec rake db:schema:load RAILS_ENV=test
