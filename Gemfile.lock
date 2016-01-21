@@ -72,6 +72,7 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     parser (2.3.0.1)
       ast (~> 2.2)
+    pg (0.18.4)
     powerpack (0.1.1)
     puma (2.15.3)
     rack (1.6.4)
@@ -150,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   jquery-rails
+  pg
   puma
   rails (= 4.2.5)
   rubocop
