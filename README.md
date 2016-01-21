@@ -1,4 +1,5 @@
 # TEAM-SPIRIT
+[![wercker status](https://app.wercker.com/status/e2f1ac1ee5f2ccf7edff55349b9b02f7/s "wercker status")](https://app.wercker.com/project/bykey/e2f1ac1ee5f2ccf7edff55349b9b02f7)
 ## This is the website repo for 3DC!
 
 ## Steps to get this running:
