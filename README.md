@@ -42,5 +42,15 @@
 	CREATE USER postgres PASSWORD="password"
 	ALTER DATABASE team_spirit_dev WITH OWNER postgres
 	```
+## Vendor Assets
+
+### This project uses jspm to handle vendor assets.
+
+```shell
+npm install jspm --save-dev
+jspm install
+```
+
+
 
 The website will be accessible at localhost:9292. Hooray!

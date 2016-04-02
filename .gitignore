@@ -17,3 +17,9 @@ config/database.yml
 
 config/initializers/secret_token.rb
 config/secrets.yml
+
+# Ignore jspm packages
+/node_modules
+/vendor/assets/jspm_packages/*/**
+/vendor/assets/
+/vendor/assets/**/*.map
