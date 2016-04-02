@@ -28,7 +28,19 @@ cd team-spirit
 rvm install 2.3.0
 bundle install
 cp config/database.yml.sample database.yml
+```
+
+5. Create your secrets.yml file under *config/secrets.yml*
+
+```shell
 puma
+```
+
+6. If the role 'postgres' does not exist,
+
+```pg
+CREATE USER postgres PASSWORD="password"
+ALTER DATABASE team_spirit_dev WITH OWNER postgres
 ```
 
 The website will be accessible at localhost:9292. Hooray!
