@@ -23,3 +23,5 @@ config/secrets.yml
 /vendor/assets/jspm_packages/*/**
 /vendor/assets/
 /vendor/assets/**/*.map
+
+*.DS_Store
