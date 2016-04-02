@@ -1,2 +1,35 @@
-h1 SUTD-3DC
-h2 Team Spirit Stronk
+.header
+  h1 3DC
+  h2 Digital Design & Development Club
+
+= image_tag "banner.jpg", class: "banner"
+
+.menu
+  = link_to "About", "#about"
+  = link_to "Projects", "#projects"
+  = link_to "Events", "#events"
+  = link_to "EXCO", "#exco"
+
+section#about
+  h3.header About Us
+  p
+    | Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+
+section#projects
+  h3.header Projects
+  - (1..9).each do |project|
+    .block
+      h4 = "Project #{project}"
+
+section#events
+  h3.header Events
+  - (1..9).each do |event|
+    div
+      h4 = "Event #{event}"
+
+
+section#exco
+  h3.header EXCO
+  - (1..9).each do |exco|
+    .block
+      h4 = "Exco #{exco}"
