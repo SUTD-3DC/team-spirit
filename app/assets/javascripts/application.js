@@ -10,5 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  var offset = $('.menu').offset().top
+  $(window).scroll(function () {
+      if( $(window).scrollTop() > $('.menu').offset().top && !($('.menu').hasClass('fix-top'))){
+        $('.menu').addClass('fix-top');
+      } else if ($(window).scrollTop() < offset){
+        $('.menu').removeClass('fix-top');
+      }
+  });
+});

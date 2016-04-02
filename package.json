@@ -4,7 +4,6 @@
       "baseURL": "vendor/assets"
     },
     "dependencies": {
-      "jquery": "npm:jquery@^2.2.2",
       "react": "npm:react@^0.14.8"
     },
     "devDependencies": {
