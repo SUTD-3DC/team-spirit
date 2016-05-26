@@ -1,2 +1,4 @@
 Documentation:
   Enabled: False
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact

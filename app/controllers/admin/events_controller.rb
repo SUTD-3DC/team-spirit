@@ -1,5 +1,6 @@
-class EventsController < ApplicationController
+class Admin::EventsController < ApplicationController
   def new
+    @event = Event.new
   end
 
   def create

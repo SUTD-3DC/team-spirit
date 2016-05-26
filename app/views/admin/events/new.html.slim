@@ -1,0 +1,11 @@
+section
+  h1 Add a New Event
+  = simple_form_for @event, url: admin_events_path do |f|
+    = f.input :title
+    = f.input :description, input_html: { rows: 5 }
+    = f.input :start_date, order: [:day, :month, :year]
+    = f.input :end_date, order: [:day, :month, :year]
+    = f.input :image_url
+    = f.input :location
+    = f.input :event_type
+    = f.submit
