@@ -13,7 +13,9 @@ class Admin::EventsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    Event.find(params[:id]).delete
+    redirect_to signed_in_root_path, alert: 'The event has been successfully deleted.'
   end
 
   private
