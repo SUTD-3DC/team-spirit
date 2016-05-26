@@ -6,7 +6,8 @@ class Admin::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.valid?
-      @event.save
+      event = @event.save
+      Log.create(action: "Event of ID = #{event.id} has been created by #{current_user.email}.")
       redirect_to signed_in_root_path, notice: 'The event has been successfully created!'
     else
       render :new
@@ -14,7 +15,9 @@ class Admin::EventsController < ApplicationController
   end
 
   def destroy
-    Event.find(params[:id]).delete
+    @event = Event.find(params[:id])
+    @event.delete
+    Log.create(action: "{@event.title} previously of ID = #{params[:id]} has been removed by #{current_user.email}.")
     redirect_to signed_in_root_path, alert: 'The event has been successfully deleted.'
   end
 
