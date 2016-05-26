@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.3.1"
-
+ruby '2.3.1'
 
 # front end gems
 gem 'rails', '4.2.5'
@@ -11,6 +10,7 @@ gem 'jquery-rails', '4.1.1'
 gem 'slim'
 gem 'neat'
 gem 'clearance'
+gem 'simple_form'
 
 # back-end gems
 gem 'turbolinks'
