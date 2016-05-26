@@ -7,5 +7,6 @@ section
     = f.input :end_date, order: [:day, :month, :year]
     = f.input :image_url
     = f.input :location
-    = f.input :event_type
+    = f.input :event_type do
+        = f.select :event_type, { Event: 0, Workshop: 1 }
     = f.submit
