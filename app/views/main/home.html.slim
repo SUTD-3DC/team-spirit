@@ -31,7 +31,7 @@ section#events
   - @events.each do |event|
     .block
       h2 = event.title
-      p = "#{event.start_date.strftime("%d %B %Y")} to #{event.end_date.strftime("%d %B %Y")}"
+      p = event_date(event)
       br
       p = event.description
       - if event.image_url
