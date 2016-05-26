@@ -30,6 +30,12 @@ section#events
   h1.header Events
   - @events.each do |event|
     .block
+      h2 = event.title
+      p = "#{event.start_date.strftime("%d %B %Y")} to #{event.end_date.strftime("%d %B %Y")}"
+      br
+      p = event.description
+      - if event.image_url
+        = image_tag event.image_url
 
 section#contact
   h1.header Contact
