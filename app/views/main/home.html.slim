@@ -7,6 +7,7 @@
   = link_to "About", "#about"
   = link_to "Workshops", "#workshops"
   = link_to "Events", "#events"
+  = link_to "Contact", "#contact"
   - if current_user
     = link_to "Add New Items", "#", class: "alternate-link"
 
@@ -29,3 +30,10 @@ section#events
   h1.header Events
   - @events.each do |event|
     .block
+
+section#contact
+  h1.header Contact
+  p.text-center
+    | Have any enquiries? Email us at 
+    = mail_to "3dc@club.sutd.edu.sg"
+    |  and we will get back to you as soon as possible!
