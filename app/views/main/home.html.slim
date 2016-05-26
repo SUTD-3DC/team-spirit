@@ -8,7 +8,6 @@
   = link_to "About", "#about"
   = link_to "Workshops", "#workshops"
   = link_to "Events", "#events"
-  = link_to "EXCO", "#exco"
 
 section#about
   h3.header About Us
@@ -17,18 +16,10 @@ section#about
 
 section#workshops
   h3.header Workshops
-  - Workshops.each do |project|
+  - @workshops.each do |workshop|
     .block
 
 section#events
   h3.header Events
-  - (1..9).each do |event|
-    div
-      h4 = "Event #{event}"
-
-
-section#exco
-  h3.header EXCO
-  - (1..9).each do |exco|
+  - @events.each do |event|
     .block
-      h4 = "Exco #{exco}"

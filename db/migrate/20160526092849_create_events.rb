@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :description
       t.string :image_url
       t.string :location
-      t.string :type
+      t.integer :event_type, index: true
 
       t.timestamps null: false
     end

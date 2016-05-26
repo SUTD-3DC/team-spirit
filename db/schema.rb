@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(version: 20160526092849) do
     t.text     "description"
     t.string   "image_url"
     t.string   "location"
-    t.string   "type"
+    t.integer  "event_type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "events", ["event_type"], name: "index_events_on_event_type", using: :btree
 
 end
