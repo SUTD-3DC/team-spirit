@@ -1,4 +1,6 @@
 Documentation:
   Enabled: False
+Style/LineLength:
+  Max: 120
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact

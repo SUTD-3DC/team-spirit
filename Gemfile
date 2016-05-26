@@ -8,9 +8,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails', '4.1.1'
 gem 'slim'
-gem 'neat'
 gem 'clearance'
 gem 'simple_form'
+
+# styles
+gem 'neat'
+gem 'bitters'
+gem 'bourbon'
 
 # back-end gems
 gem 'turbolinks'
