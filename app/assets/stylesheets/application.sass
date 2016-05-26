@@ -18,6 +18,8 @@ body
 
 .text-center
   text-align: center
+.text-right
+  text-align: right
 
 .header
   text-align: center
@@ -50,8 +52,11 @@ section
     @include span-columns(3)
     h4
       text-align: center
-  &:nth-child(odd)
-    background-color: darken($background, 1%)
+
+.main.home
+  section
+    &:nth-child(odd)
+      background-color: darken($background, 1%)
 
 .menu
   text-align: center

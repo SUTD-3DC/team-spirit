@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   end
   constraints Clearance::Constraints::SignedOut.new do
     root to: 'main#home', as: :signed_out_root
+    namespace :admin do
+      resources :events, only: [:new, :create, :delete]
+    end
+
   end
 end

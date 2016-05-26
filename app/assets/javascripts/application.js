@@ -16,12 +16,14 @@
 //= require_tree .
 
 $(function() {
-  var offset = $('.menu').offset().top
-  $(window).scroll(function () {
-      if( $(window).scrollTop() > $('.menu').offset().top && !($('.menu').hasClass('fix-top'))){
-        $('.menu').addClass('fix-top');
-      } else if ($(window).scrollTop() < offset){
-        $('.menu').removeClass('fix-top');
-      }
-  });
+  if ($('.menu').length != 0){
+    var offset = $('.menu').offset().top
+    $(window).scroll(function () {
+        if( $(window).scrollTop() > $('.menu').offset().top && !($('.menu').hasClass('fix-top'))){
+          $('.menu').addClass('fix-top');
+        } else if ($(window).scrollTop() < offset){
+          $('.menu').removeClass('fix-top');
+        }
+    });
+  }
 });
