@@ -7,6 +7,8 @@
   = link_to "About", "#about"
   = link_to "Workshops", "#workshops"
   = link_to "Events", "#events"
+  - if current_user
+    = link_to "Add New Items", "#", class: "alternate-link"
 
 section#about
   h3.header About Us
@@ -14,7 +16,8 @@ section#about
     |We are a family of people who are passionate about coding and teaching. We aim to brighten up student life at SUTD through IT-related events. Regardless of knowledge in programming and IT, we aim to ensure that everybody has an equal opportunity to learn and improve!
 
 section#workshops
-  h3.header Workshops
+  h3.header 
+    | Workshops
   - @workshops.each do |workshop|
     .block
 
