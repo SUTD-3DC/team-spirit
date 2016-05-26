@@ -11,17 +11,17 @@
     = link_to "Add New Items", "#", class: "alternate-link"
 
 section#about
-  h3.header About Us
+  h1.header About Us
   p
     |We are a family of people who are passionate about coding and teaching. We aim to brighten up student life at SUTD through IT-related events. Regardless of knowledge in programming and IT, we aim to ensure that everybody has an equal opportunity to learn and improve!
 
 section#workshops
-  h3.header 
+  h1.header 
     | Workshops
   - @workshops.each do |workshop|
     .block
 
 section#events
-  h3.header Events
+  h1.header Events
   - @events.each do |event|
     .block
