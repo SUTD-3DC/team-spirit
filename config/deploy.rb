@@ -2,7 +2,7 @@
 lock '3.5.0'
 
 set :application, 'team_spirit'
-set :repo_url, 'git@github.com:SUTD-3DC/team-spirit.git'
+set :repo_url, 'https://github.com/SUTD-3DC/team-spirit.git'
 set :deploy_user, 'threedc'
 
 # Default branch is :master
