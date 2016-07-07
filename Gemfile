@@ -29,6 +29,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rubocop'
-  gem 'capistrano', '~> 3.4'
-  gem 'capistrano3-puma'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
