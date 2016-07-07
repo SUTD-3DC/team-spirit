@@ -30,4 +30,5 @@ group :development do
   gem 'spring'
   gem 'rubocop'
   gem 'capistrano', '~> 3.4'
+  gem 'capistrano3-puma'
 end
