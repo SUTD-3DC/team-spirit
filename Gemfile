@@ -21,6 +21,8 @@ gem 'turbolinks'
 gem 'puma'
 gem 'pg'
 
+gem 'nokogiri'
+
 group :development, :test do
   gem 'byebug'
 end

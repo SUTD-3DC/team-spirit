@@ -212,6 +212,7 @@ DEPENDENCIES
   clearance
   jquery-rails (= 4.1.1)
   neat
+  nokogiri
   pg
   puma
   rails (= 4.2.5)
