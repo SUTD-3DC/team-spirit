@@ -5,6 +5,8 @@
 @import "forms"
 
 body
+  margin-top: 0
+  margin-left: 0
   background: $background
 
 .alternate-link
@@ -26,6 +28,7 @@ body
   text-align: right
 
 .header
+  margin-top: 3em
   text-align: center
 
 .banner
@@ -34,8 +37,8 @@ body
   margin-bottom: -10px
 
 .logo
-  margin: 3rem 0
-  width: 20rem
+  margin: 3em 0
+  width: 20em
 
 footer
   @include outer-container(100%)
@@ -44,14 +47,14 @@ footer
   text-align: center
   font-size: 10px
 
-  margin-top: 1.5rem
-  margin-bottom: 1.5rem
+  margin-top: 1.5em
+  margin-bottom: 1.5em
 
 section
-  padding-top: 0.5rem
-  padding-bottom: 0.5rem
-  margin-top: 1.5rem
-  margin-bottom: 1.5rem
+  padding-top: 0.5em
+  padding-bottom: 0.5em
+  margin-top: 1.5em
+  margin-bottom: 1.5em
 
   @include span-columns(9)
   @include shift(1.5)
@@ -59,11 +62,6 @@ section
     @include span-columns(3)
     h4
       text-align: center
-
-.main.home
-  section
-    &:nth-child(odd)
-      background-color: darken($background, 2.5%)
 
 .flash
   &.success
@@ -74,31 +72,27 @@ section
   &.alert
     background-color: $red
     color: white
-  padding-left: 1rem
-    
+  padding-left: 1em
+
 .half
   @include span-columns(6)
 
 .menu
+  position: fixed
+  width: 100%
   text-align: center
   background: $blue
-  padding-top: 1rem
-  padding-bottom: 1rem
-
-  &.fix-top
-    position: fixed
-    top: 0
-    left: 0
-    @include outer-container(100%)
-    @include span-columns(12)
+  padding: 1em 0 1em 0
+  @include outer-container(100%)
+  @include span-columns(12)
 
   & > a
     color: white
     font-weight: bold
-    padding-top: 1rem
-    padding-left: 1rem
-    padding-right: 1rem
-    padding-bottom: 1.3rem
+    padding-top: 1em
+    padding-left: 1em
+    padding-right: 1em
+    padding-bottom: 1.3em
     &:hover
       background-color: darken($dark-gray, 5%)
 
