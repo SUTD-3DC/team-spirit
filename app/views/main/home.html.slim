@@ -19,19 +19,25 @@
 section#workshops
   h1.header
     | Workshops
-  - @workshops.each do |workshop|
-    .block
+  - unless @workshops.empty?
+    - @workshops.each do |workshop|
+      .block
+  - else
+    | No workshops to show at the moment.
 
 section#events
   h1.header Events
-  - @events.each do |event|
-    .block
-      h2 = event.title
-      p = event_date(event)
-      br
-      p = event.description
-      - if event.image_url
-        = image_tag event.image_url
+  - unless @events.empty?
+    - @events.each do |event|
+      .block
+        h2 = event.title
+        p = event_date(event)
+        br
+        p = event.description
+        - if event.image_url
+          = image_tag event.image_url
+  - else
+    | No upcoming events.
 
 section#contact
   h1.header Contact
