@@ -3,5 +3,3 @@ development:
   encoding: unicode
   database: team_spirit_dev
   pool: 5
-  username: postgres
-  password: password
