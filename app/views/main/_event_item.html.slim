@@ -1,0 +1,7 @@
+.block
+  h2 = item.title
+  p = event_date(item)
+  br
+  p = item.description
+  - if item.image_url
+    = image_tag item.image_url

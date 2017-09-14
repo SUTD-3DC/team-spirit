@@ -21,7 +21,7 @@ section#workshops
     | Workshops
   - unless @workshops.empty?
     - @workshops.each do |workshop|
-      .block
+      = render "event_item", item: workshop
   - else
     | No workshops to show at the moment.
 
@@ -29,13 +29,7 @@ section#events
   h1.header Events
   - unless @events.empty?
     - @events.each do |event|
-      .block
-        h2 = event.title
-        p = event_date(event)
-        br
-        p = event.description
-        - if event.image_url
-          = image_tag event.image_url
+      = render "event_item", item: event
   - else
     | No upcoming events.
 
