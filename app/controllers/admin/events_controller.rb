@@ -1,6 +1,6 @@
 class Admin::EventsController < ApplicationController
   before_action :require_login
-  
+
   def new
     @event = Event.new
   end
@@ -26,6 +26,6 @@ class Admin::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :start_date, :end_date, :image_url, :location, :event_type)
+    params.require(:event).permit(:title, :description, :start_date, :end_date, :image_url, :location, :event_type, :link)
   end
 end

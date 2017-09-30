@@ -5,3 +5,5 @@
   p = item.description
   - if item.image_url
     = image_tag item.image_url
+  - if item.link
+    = link_to(item.link, item.link, target:"_blank")
