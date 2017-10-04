@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'slim'
 gem 'clearance'
 gem 'simple_form'
+gem 'npm-rails'
 
 # styles
 gem 'neat'
