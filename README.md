@@ -44,11 +44,11 @@
 	```
 ## Vendor Assets
 
-### This project uses jspm to handle vendor assets.
+### This project uses npm-rails to handle vendor assets.
 
+1. Update npm_packages file
 ```shell
-npm install jspm --save-dev
-jspm install
+rake npm:install
 ```
 
 
