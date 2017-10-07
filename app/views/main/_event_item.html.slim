@@ -7,3 +7,6 @@
     = image_tag item.image_url
   - if item.link
     = link_to(item.link, item.link, target:"_blank")
+  p
+  - if item.image_thumb_uid.present?
+    = image_tag item.image_thumb.remote_url
