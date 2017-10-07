@@ -4,7 +4,11 @@ class Event < ActiveRecord::Base
 
   TYPES = %w(Event Workshop).freeze
 
-  dragonfly_accessor :image
+  dragonfly_accessor :image do
+    copy_to(:image_thumb){|a| a.thumb('250x250') }
+  end
+
+  dragonfly_accessor :image_thumb
 
   def readable_event_type
     Event::TYPES[event_type].camelcase
