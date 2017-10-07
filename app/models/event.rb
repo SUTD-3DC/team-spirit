@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
 
   TYPES = %w(Event Workshop).freeze
 
+  dragonfly_accessor :image
+
   def readable_event_type
     Event::TYPES[event_type].camelcase
   end
