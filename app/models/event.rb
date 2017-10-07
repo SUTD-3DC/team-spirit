@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   validates :title, :description, :start_date, :end_date, :location, :event_type, presence: :true
-  validates_format_of :link, :with => /\A(http(s?):\/\/www.){1}.+(.com){1}/, :message => "The link is invalid."
+  validates_format_of :link, with: /\A(http(s?):\/\/www.){1}.+(.com){1}/, message: :"The link is invalid.", allow_blank: :true
+
 
   TYPES = %w(Event Workshop).freeze
 
