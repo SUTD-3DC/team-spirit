@@ -1,4 +1,5 @@
 .block
+  = stylesheet_pack_tag "app"
   h2 = item.title
   p = event_date(item)
   br
@@ -9,4 +10,5 @@
     = link_to(item.link, item.link, target:"_blank")
   p
   - if item.image_thumb_uid.present?
-    = image_tag item.image_thumb.remote_url
+    = link_to item.image.remote_url, "data-lightbox":"testing" do
+      = image_tag item.image_thumb.remote_url
