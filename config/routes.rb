@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   constraints Clearance::Constraints::SignedIn.new do
     root to: 'dashboard#index', as: :signed_in_root
     namespace :admin do
