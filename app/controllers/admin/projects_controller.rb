@@ -1,58 +1,31 @@
-class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+class Admin::ProjectsController < ApplicationController
+  before_action :require_login
 
-  # GET /projects
-  def index
-    @projects = Project.all
-  end
-
-  # GET /projects/1
-  def show
-  end
-
-  # GET /projects/new
   def new
     @project = Project.new
   end
 
-  # GET /projects/1/edit
-  def edit
-  end
-
-  # POST /projects
   def create
     @project = Project.new(project_params)
-
-    if @project.save
-      redirect_to @project, notice: 'Project was successfully created.'
+    if @project.valid?
+      @project.save
+      Log.create(action: "Project of ID = #{Project.last.id} has been created by #{current_user.email}.")
+      redirect_to signed_in_root_path, notice: 'The project has been successfully created!'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /projects/1
-  def update
-    if @project.update(project_params)
-      redirect_to @project, notice: 'Project was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /projects/1
   def destroy
-    @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    @project = Project.find(params[:id])
+    @project.delete
+    Log.create(action: "#{@project.title} previously of ID = #{params[:id]} has been removed by #{current_user.email}.")
+    redirect_to signed_in_root_path, alert: 'The project has been successfully deleted.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:id, :title, :description, :created_at, :without, :time, :zone, :updated_at, :without, :time, :zone, :start_time, :end_time)
+      params.require(:project).permit(:title, :description, :start_time, :end_time)
     end
 end
