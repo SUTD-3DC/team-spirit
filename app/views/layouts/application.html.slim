@@ -14,11 +14,12 @@ html lang="en"
 
     - if signed_in?
       span.sign-in-status
-          | Signed in as: 
+          | Signed in as:
           = current_user.email
           = button_to 'Sign out', sign_out_path, method: :delete
     .container
       = yield
     = javascript_include_tag "application"
+    = javascript_pack_tag "application"
     footer
       = copyright

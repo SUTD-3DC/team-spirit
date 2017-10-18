@@ -21,6 +21,14 @@ config/database.yml
 /vendor/assets/
 /vendor/assets/**/*.map
 
-*.DS_Store# Added by npm-rails
+# Added by npm-rails
 /node_modules
 *.DS_Store
+
+# Ignore public assets 'Dragonfly'
+/public/system/dragonfly/*
+
+# Ignore public pack for 'webpacker'
+/public/packs
+/public/packs-test
+/node_modules
