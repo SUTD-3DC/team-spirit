@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :events
       resources :projects
+      resources :pictures, :only => [:index, :create, :destroy]
     end
   end
   constraints Clearance::Constraints::SignedOut.new do
