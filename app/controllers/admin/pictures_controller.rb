@@ -6,7 +6,7 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(params[:picture])
+    @picture = Picture.new(picture_params)
     if @picture.save
       respond_to do |format|
         format.html {
@@ -27,5 +27,11 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @picture.destroy
     render :json => true
+  end
+
+  private
+
+  def picture_params
+    params.require(:picture).permit(:image_uid, :image_thumb_uid, :project_id)
   end
 end
