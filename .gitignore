@@ -27,3 +27,8 @@ config/database.yml
 
 # Ignore public assets 'Dragonfly'
 /public/system/dragonfly/*
+
+# Ignore public pack for 'webpacker'
+/public/packs
+/public/packs-test
+/node_modules

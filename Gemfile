@@ -12,6 +12,7 @@ gem 'clearance'
 gem 'simple_form'
 gem 'npm-rails'
 gem 'dragonfly', '~> 1.1.3'
+gem 'webpacker', '~> 3.0'
 
 # styles
 gem 'neat'
