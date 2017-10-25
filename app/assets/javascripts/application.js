@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require npm-dependencies
 //= require jquery-fileupload
+//= require cocoon
 //= require_tree .
