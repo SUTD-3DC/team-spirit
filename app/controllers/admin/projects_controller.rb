@@ -3,10 +3,12 @@ class Admin::ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.pictures.build
   end
 
   def create
     @project = Project.new(project_params)
+    @project.pictures.build
     if @project.valid?
       @project.save
       Log.create(action: "Project of ID = #{Project.last.id} has been created by #{current_user.email}.")
@@ -25,7 +27,7 @@ class Admin::ProjectsController < ApplicationController
 
   private
 
-    def project_params
-      params.require(:project).permit(:title, :description, :start_date, :end_date)
-    end
+  def project_params
+    params.require(:project).permit(:title, :description, :start_date, :end_date, pictures_attributes:[:id, :image, :project_id, :_destroy])
+  end
 end
