@@ -1,8 +1,0 @@
-section
-  h1 Add a New Project
-  = simple_form_for @project, url: admin_projects_path do |f|
-    = f.input :title
-    = f.input :description, input_html: { rows: 5 }
-    = f.input :start_date, order: [:day, :month, :year]
-    = f.input :end_date, order: [:day, :month, :year]
-    = f.submit
