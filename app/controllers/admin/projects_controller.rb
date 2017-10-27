@@ -20,7 +20,7 @@ class Admin::ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.delete
+    @project.destroy
     Log.create(action: "#{@project.title} previously of ID = #{params[:id]} has been removed by #{current_user.email}.")
     redirect_to signed_in_root_path, alert: 'The project has been successfully deleted.'
   end
