@@ -8,7 +8,6 @@ class Admin::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.pictures.build
     if @project.valid?
       @project.save
       Log.create(action: "Project of ID = #{Project.last.id} has been created by #{current_user.email}.")
