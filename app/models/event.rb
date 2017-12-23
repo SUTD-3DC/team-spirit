@@ -6,12 +6,6 @@ class Event < ActiveRecord::Base
 
   TYPES = %w(Event Workshop).freeze
 
-  dragonfly_accessor :image do
-    copy_to(:image_thumb){|a| a.thumb('250x250') }
-  end
-
-  dragonfly_accessor :image_thumb
-
   def check_link_heading
     if !self.link.empty?
       self.link.strip!
