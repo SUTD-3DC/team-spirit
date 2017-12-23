@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   before_validation :check_link_heading
   validates :title, :description, :start_date, :end_date, :location, :event_type, presence: :true
   validates_format_of :link, with: /\A(http(s?):\/\/www.){1}.+(.com){1}/, message: :"The link is invalid.", allow_blank: :true
-
+  has_one :picture, as: :imageable, dependent: :destroy
 
   TYPES = %w(Event Workshop).freeze
 
