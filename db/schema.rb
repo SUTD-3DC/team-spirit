@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019230306) do
+ActiveRecord::Schema.define(version: 20171223071143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,9 @@ ActiveRecord::Schema.define(version: 20171019230306) do
     t.string   "image_url"
     t.string   "location"
     t.integer  "event_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "link"
-    t.string   "image_uid"
-    t.string   "image_thumb_uid"
     t.index ["event_type"], name: "index_events_on_event_type", using: :btree
   end
 
@@ -53,8 +51,6 @@ ActiveRecord::Schema.define(version: 20171019230306) do
     t.date     "end_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "image_uid"
-    t.string   "image_name"
   end
 
   create_table "users", force: :cascade do |t|
