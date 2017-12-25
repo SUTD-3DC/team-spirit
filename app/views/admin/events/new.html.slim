@@ -5,7 +5,8 @@ section
     = f.input :description, input_html: { rows: 5 }
     = f.input :start_date, order: [:day, :month, :year]
     = f.input :end_date, order: [:day, :month, :year]
-    = f.input :image, as: :file
+    = f.simple_fields_for :picture do |p|
+      = p.input :image, as: :file
     = f.input :location
     = f.input :link
     = f.input :event_type do
