@@ -3,6 +3,7 @@ class Admin::EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.build_picture
   end
 
   def create
