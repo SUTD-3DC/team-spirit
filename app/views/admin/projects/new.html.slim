@@ -5,6 +5,7 @@ section
     = f.input :description, input_html: { rows: 5 }
     = f.input :start_date, order: [:day, :month, :year]
     = f.input :end_date, order: [:day, :month, :year]
+    = f.input :link
     #pictures
       = f.simple_fields_for :pictures do |pic|
         = render 'picture_fields', f: pic
