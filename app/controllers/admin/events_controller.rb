@@ -19,7 +19,7 @@ class Admin::EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.delete
+    @event.destroy
     Log.create(action: "#{@event.title} previously of ID = #{params[:id]} has been removed by #{current_user.email}.")
     redirect_to signed_in_root_path, alert: 'The event has been successfully deleted.'
   end
