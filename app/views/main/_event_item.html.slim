@@ -4,8 +4,6 @@
   p = event_date(item)
   br
   p = item.description
-  - if item.picture.image_url
-    = image_tag item.picture.image_url
   - if item.link
     = link_to(item.link, item.link, target:"_blank")
   p
