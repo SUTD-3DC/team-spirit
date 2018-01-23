@@ -7,6 +7,6 @@
   - if item.link
     = link_to(item.link, item.link, target:"_blank")
   p
-  - if item.picture.image_thumb_uid.present?
+  - if item.picture.present? && item.picture.image_thumb_uid.present?
     = link_to image_tag(item.picture.image_thumb.remote_url), item.picture.image.remote_url,
       rel: "lightbox", title: item.title, "data-lightbox": item.title
