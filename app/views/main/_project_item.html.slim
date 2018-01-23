@@ -1,0 +1,17 @@
+.block
+  = stylesheet_pack_tag "application"
+  h2 = item.title
+  p = event_date(item)
+  br
+  p = item.description
+  - if item.link
+    = link_to(item.link, item.link, target:"_blank")
+  p
+  - if item.pictures.present?
+    - item.pictures.each do |pic|
+      - if pic == pic.imageable.pictures.first
+        td= link_to image_tag(pic.image_thumb.remote_url), pic.image.remote_url, rel: "lightbox",
+        title: pic.imageable.title, "data-lightbox": pic.imageable.title
+      -else
+        td.hidden= link_to image_tag(pic.image_thumb.remote_url), pic.image.remote_url, class: "hidden", rel: "lightbox",
+        title: pic.imageable.title, "data-lightbox": pic.imageable.title

@@ -4,11 +4,9 @@
   p = event_date(item)
   br
   p = item.description
-  - if item.image_url
-    = image_tag item.image_url
   - if item.link
     = link_to(item.link, item.link, target:"_blank")
   p
-  - if item.image_thumb_uid.present?
-    = link_to item.image.remote_url, "data-lightbox":item.title do
-      = image_tag item.image_thumb.remote_url
+  - if item.picture.image_thumb_uid.present?
+    = link_to image_tag(item.picture.image_thumb.remote_url), item.picture.image.remote_url,
+      rel: "lightbox", title: item.title, "data-lightbox": item.title

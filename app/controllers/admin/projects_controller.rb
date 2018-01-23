@@ -27,6 +27,6 @@ class Admin::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :start_date, :end_date, pictures_attributes:[:id, :image, :project_id, :_destroy])
+    params.require(:project).permit(:title, :description, :start_date, :end_date, :link, pictures_attributes:[:image])
   end
 end

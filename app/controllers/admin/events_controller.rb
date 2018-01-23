@@ -3,6 +3,7 @@ class Admin::EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.build_picture
   end
 
   def create
@@ -18,7 +19,7 @@ class Admin::EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.delete
+    @event.destroy
     Log.create(action: "#{@event.title} previously of ID = #{params[:id]} has been removed by #{current_user.email}.")
     redirect_to signed_in_root_path, alert: 'The event has been successfully deleted.'
   end
@@ -26,6 +27,6 @@ class Admin::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, :start_date, :end_date, :image_url, :location, :event_type, :link, :image)
+    params.require(:event).permit(:title, :description, :start_date, :end_date, :image_url, :location, :event_type, :link, picture_attributes:[:image])
   end
 end

@@ -1,16 +1,11 @@
 class Event < ActiveRecord::Base
   before_validation :check_link_heading
-  validates :title, :description, :start_date, :end_date, :location, :event_type, presence: :true
-  validates_format_of :link, with: /\A(http(s?):\/\/www.){1}.+(.com){1}/, message: :"The link is invalid.", allow_blank: :true
-
+  validates :title, :description, :start_date, :end_date, :location, :event_type, :link, presence: :true
+  validates_format_of :link, with: /\A(http(s?):\/\/www.){1}.+(.com){1}/, message: "The link is invalid.", allow_blank: :true
+  has_one :picture, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :picture, reject_if: :all_blank, allow_destroy: true
 
   TYPES = %w(Event Workshop).freeze
-
-  dragonfly_accessor :image do
-    copy_to(:image_thumb){|a| a.thumb('250x250') }
-  end
-
-  dragonfly_accessor :image_thumb
 
   def check_link_heading
     if !self.link.empty?
