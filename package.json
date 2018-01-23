@@ -1,10 +1,10 @@
 {
   "dependencies": {
     "@rails/webpacker": "^3.2.0",
-    "browserify": "^14.4.0",
+    "browserify": "^15.2.0",
     "coffeescript": "1.12.7",
     "jquery": "^3.2.1",
-    "lightbox2": "^2.9.0",
+    "lightbox2": "^2.10.0",
     "postcss-smart-import": "^0.7.6",
     "webpack": "^3.10.0"
   },
