@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     root to: 'dashboard#index', as: :signed_in_root
     namespace :admin do
       resources :events
+      resources :projects
+      resources :pictures, :only => [:index, :create, :destroy]
     end
   end
   constraints Clearance::Constraints::SignedOut.new do
